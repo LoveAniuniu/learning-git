@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "TestAll">
+    <test name="final1">
+        <parameter name = "xx" value="dbconfig"/>
+        <parameter name = "yy" value="db.poolsize"/>
+        <classes>
+            <class name = "TestDemo2">
+                <methods>
+                    <include name = "test01" />
+            </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="final2">
+        <parameter name = "ss" value="wangning"/>
+        <parameter name = "yy" value="wanghao"/>
+        <classes>
+            <class name = "TestDemo2">
+                <methods>
+                    <include name = "test02" />
+                </methods>
+            </class>
+        </classes>
+        <!--<packages>-->
+            <!--<package name ="all-package"/>-->
+        <!--运行指定包中的所有class文件中的方法-->
+        <!--</packages>>-->
+    </test>
+
+    <test name = "selenium">
+        <groups>
+            <run>
+                <include name ="selenium-test"/>
+                <!--分组测试：类中所有function-test并且groups属性包含run中的name的所有方法-->
+            </run>
+        </groups>
+        <classes>
+            <class name="TestDeno"/>
+        </classes>
+    </test>
+
+</suite>
+
+
